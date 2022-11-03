@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Button from "../Button/Button";
 import './NftCard.css'
 const NftCard = ({imgsrc,heading,btntext,btnlink,linkdata}) => {
@@ -7,7 +8,7 @@ const NftCard = ({imgsrc,heading,btntext,btnlink,linkdata}) => {
             <h5 className=" fs-4 py-2">{heading}</h5>
             <div className=" w-100 my-3" style={{height:'1px',background:'white'}}></div>
            
-           <a href={linkdata} target="_blank"><Button text={btntext}  /></a> 
+           <Link to={linkdata} ><Button text={btntext}  /></Link> 
         </div>
      );
 }
