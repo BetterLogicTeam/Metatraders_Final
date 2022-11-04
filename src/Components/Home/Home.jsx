@@ -38,16 +38,16 @@ const Home = () => {
         card.scrollBy(-scrollinc, 0)
     }
 
-    const [nftname, setnftname] = useState('META TRADER NFT')
-    const [nftname2, setnftname2] = useState('META TRADER NFT')
-    const [nftname3, setnftname3] = useState('META TRADER NFT')
-    const [nftname4, setnftname4] = useState('META TRADER NFT')
-    const [nftname5, setnftname5] = useState('META TRADER NFT')
-    const [mintprice, setmintprice] = useState(0)
-    const [mintprice2, setmintprice2] = useState(0)
-    const [mintprice3, setmintprice3] = useState(0)
-    const [mintprice4, setmintprice4] = useState(0)
-    const [mintprice5, setmintprice5] = useState(0)
+    const [nftname, setnftname] = useState('META-TRADERS ARMY PRIVATE')
+    const [nftname2, setnftname2] = useState('META-TRADERS ARMY SERGEANT')
+    const [nftname3, setnftname3] = useState('META-TRADERS ARMY CAPTAIN')
+    const [nftname4, setnftname4] = useState('META-TRADERS ARMY COLONEL')
+    const [nftname5, setnftname5] = useState('META-TRADERS ARMY GENERAL')
+    const [mintprice, setmintprice] = useState(0.03)
+    const [mintprice2, setmintprice2] = useState(0.03)
+    const [mintprice3, setmintprice3] = useState(0.03)
+    const [mintprice4, setmintprice4] = useState(0.03)
+    const [mintprice5, setmintprice5] = useState(0.03)
 
 
 
