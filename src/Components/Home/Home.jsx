@@ -2,7 +2,7 @@ import Button from '../Button/Button';
 import './Home.css'
 import { MdArrowForward, MdArrowBack } from 'react-icons/md'
 import NftCard from '../NftCard/NftCard';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Navbar from '../Navbar/Navbar';
 import { FiFacebook } from 'react-icons/fi'
 import { FaTelegramPlane } from 'react-icons/fa'
@@ -17,6 +17,8 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Pagination } from "swiper";
+import { CONTRACT } from '../../Utils/contract';
+import { loadWeb3 } from '../../api';
 const Home = () => {
     // const [nftdata,setnftdata] = useState([
     //     {
@@ -35,6 +37,70 @@ const Home = () => {
         let scrollinc = 200;
         card.scrollBy(-scrollinc, 0)
     }
+
+    const [nftname, setnftname] = useState('META TRADER NFT')
+    const [nftname2, setnftname2] = useState('META TRADER NFT')
+    const [nftname3, setnftname3] = useState('META TRADER NFT')
+    const [nftname4, setnftname4] = useState('META TRADER NFT')
+    const [nftname5, setnftname5] = useState('META TRADER NFT')
+    const [mintprice, setmintprice] = useState(0)
+    const [mintprice2, setmintprice2] = useState(0)
+    const [mintprice3, setmintprice3] = useState(0)
+    const [mintprice4, setmintprice4] = useState(0)
+    const [mintprice5, setmintprice5] = useState(0)
+
+
+
+
+
+
+
+    const connectToWallet = async () => {
+
+        let acc = await loadWeb3()
+
+
+        let contract = await new window.web3.eth.Contract(CONTRACT[0].contractAbi, CONTRACT[0].contractAddress)
+        let name = await contract.methods.name().call();
+        setnftname(name)
+        let mintPriceWhe = await contract.methods.minting_price().call();
+        let mintPrice = window.web3.utils.fromWei(mintPriceWhe)
+        setmintprice((Number(mintPrice)))
+        let contract2 = await new window.web3.eth.Contract(CONTRACT[1].contractAbi, CONTRACT[1].contractAddress)
+        let name2 = await contract2.methods.name().call();
+        setnftname2(name2)
+        let mintPriceWhe2 = await contract2.methods.minting_price().call();
+        let mintPrice2 = window.web3.utils.fromWei(mintPriceWhe2)
+        setmintprice2((Number(mintPrice2)))
+        let contract3 = await new window.web3.eth.Contract(CONTRACT[2].contractAbi, CONTRACT[2].contractAddress)
+        let name3 = await contract3.methods.name().call();
+        setnftname3(name3)
+        let mintPriceWhe3 = await contract3.methods.minting_price().call();
+        let mintPrice3 = window.web3.utils.fromWei(mintPriceWhe3)
+        setmintprice3((Number(mintPrice3)))
+        let contract4 = await new window.web3.eth.Contract(CONTRACT[3].contractAbi, CONTRACT[3].contractAddress)
+        let name4 = await contract4.methods.name().call();
+        setnftname4(name4)
+        let mintPriceWhe4 = await contract4.methods.minting_price().call();
+        let mintPrice4 = window.web3.utils.fromWei(mintPriceWhe4)
+        setmintprice4((Number(mintPrice4)))
+        let contract5 = await new window.web3.eth.Contract(CONTRACT[4].contractAbi, CONTRACT[4].contractAddress)
+        let name5 = await contract5.methods.name().call();
+
+        setnftname5(name5)
+        let mintPriceWhe5 = await contract5.methods.minting_price().call();
+        let mintPrice5 = window.web3.utils.fromWei(mintPriceWhe5)
+        setmintprice5((Number(mintPrice5)))
+
+
+
+    }
+
+
+    useEffect(() => {
+        connectToWallet()
+    }, [])
+
     return (
         <div className="" style={{ backgroundImage: "url('/images/camo-back.jpg')", }}>
 
@@ -97,13 +163,13 @@ const Home = () => {
                         </div>
 
                         <div className=' d-flex flex-row col-md-12 my-4 cards'>
-                            <NftCard imgsrc='/images/metatrader-monkey.jpeg' heading='Meta Trader' btntext={'Mint'} linkdata="/Mint/?nft=1" />
-                            <NftCard imgsrc='/images/1.jpeg' heading='Meta Trader' btntext={'Mint'} linkdata="/Mint/?nft=2" />
-                            <NftCard imgsrc='/images/2.jpeg' heading='Meta Trader' btntext={'Mint'} linkdata="/Mint/?nft=3" />
-                            <NftCard imgsrc='/images/3.jpeg' heading='Meta Trader' btntext={'Mint'} linkdata="/Mint/?nft=4" />
-                            <NftCard imgsrc='/images/4.jpeg' heading='Meta Trader' btntext={'Mint'} linkdata="/Mint/?nft=5" />
+                            <NftCard imgsrc='/images/metatrader-monkey.jpeg' heading={nftname} btntext={'Mint'} linkdata="/Mint/?nft=1" price={mintprice} />
+                            <NftCard imgsrc='/images/1.jpeg' heading={nftname2} btntext={'Mint'} linkdata="/Mint/?nft=2" price={mintprice2} />
+                            <NftCard imgsrc='/images/2.jpeg' heading={nftname3} btntext={'Mint'} linkdata="/Mint/?nft=3" price={mintprice3} />
+                            <NftCard imgsrc='/images/3.jpeg' heading={nftname4} btntext={'Mint'} linkdata="/Mint/?nft=4" price={mintprice4} />
+                            <NftCard imgsrc='/images/4.jpeg' heading={nftname5} btntext={'Mint'} linkdata="/Mint/?nft=5" price={mintprice5} />
                         </div>
-                        
+
                     </div>
                 </div>
 

@@ -6,3 +6,7 @@
     width: 280px;
     height: 300px;
 }
+.btn_and_price{
+    display: flex;
+    justify-content: space-between;
+}
