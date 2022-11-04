@@ -7,6 +7,16 @@ import Navbar from '../Navbar/Navbar';
 import { FiFacebook } from 'react-icons/fi'
 import { FaTelegramPlane } from 'react-icons/fa'
 import { AiOutlineTwitter } from 'react-icons/ai'
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+
+// import "./styles.css";
+
+// import required modules
+import { Pagination } from "swiper";
 const Home = () => {
     // const [nftdata,setnftdata] = useState([
     //     {
@@ -27,21 +37,20 @@ const Home = () => {
     }
     return (
         <div className="" style={{ backgroundImage: "url('/images/camo-back.jpg')", }}>
-           
-            <section className='pb-5 homehere' style={{ backgroundImage: "url('/images/banner_bg.jpg')" }} >
-            <Navbar />
 
+            <section className='pb-5 homehere' style={{ backgroundImage: "url('/images/banner_bg.jpg')" }} >
+                <Navbar />
                 <div className=''>
                     <div className=' row m-0 justify-content-end abouttext text-white ' >
                         <div className=' col-md-12 pt-5'>
                             <div className='row m-0 justify-content-start col-12'>
                                 <div className=' col-md-9 col-sm-12 col-12 text-start px-5 pb-4 maindiv_p respo' >
-                                <h1 className=' col-lg-8 display-3 fw-bold'>Get access to the world’s top performing master FOREX Traders</h1>
-                                <div className='row m-0'>
-                                    <h4 className=' col-md-6  Home_inner_text pb-3'>Every day there are 6.7 TRILLION dollars traded on Forex and over
-                                        100 Billion dollars in Crypto. It’s time for you to make your share.</h4>
-                                </div>
-                                <Button text='Read White Paper' />  
+                                    <h1 className=' col-lg-8 display-3 fw-bold'>Get access to the world’s top performing master FOREX Traders</h1>
+                                    <div className='row m-0'>
+                                        <h4 className=' col-md-6  Home_inner_text pb-3'>Every day there are 6.7 TRILLION dollars traded on Forex and over
+                                            100 Billion dollars in Crypto. It’s time for you to make your share.</h4>
+                                    </div>
+                                    <Button text='Read White Paper' />
 
                                 </div>
                             </div>
@@ -72,7 +81,7 @@ const Home = () => {
                     </div>
                 </div>
             </section>
-            <section className='nftreward text-white  ' id="Reward" style={{ background: '#072008',padding:'30px' }}>
+            <section className='nftreward text-white  ' id="Reward" style={{ background: '#072008', padding: '30px' }}>
                 <div className=''>
                     <div className=' row m-0 justify-content-end' >
                         <div className=' col-md-11 container d-flex justify-content-between flex-row pt-5'>
@@ -86,19 +95,15 @@ const Home = () => {
                                 </div>
                             </div>
                         </div>
+
                         <div className=' d-flex flex-row col-md-12 my-4 cards'>
                             <NftCard imgsrc='/images/metatrader-monkey.jpeg' heading='Meta Trader' btntext={'Mint'} linkdata="/Mint/?nft=1" />
                             <NftCard imgsrc='/images/1.jpeg' heading='Meta Trader' btntext={'Mint'} linkdata="/Mint/?nft=2" />
                             <NftCard imgsrc='/images/2.jpeg' heading='Meta Trader' btntext={'Mint'} linkdata="/Mint/?nft=3" />
                             <NftCard imgsrc='/images/3.jpeg' heading='Meta Trader' btntext={'Mint'} linkdata="/Mint/?nft=4" />
                             <NftCard imgsrc='/images/4.jpeg' heading='Meta Trader' btntext={'Mint'} linkdata="/Mint/?nft=5" />
-                            {/* <NftCard imgsrc='/images/4.jpeg' heading='Meta Trader' btntext={'Mint'} linkdata="https://metatraderarmy.netlify.app/mint/?nft=5" />
-                            <NftCard imgsrc='/images/4.jpeg' heading='Meta Trader' btntext={'Mint'} linkdata="https://metatraderarmy.netlify.app/mint/?nft=5" /> */}
-
-                            {/* <NftCard imgsrc='/images/metatrader-monkey.jpeg' heading='Meta Trader' btntext={'Mint'} linkdata="https://metatraderarmy.netlify.app/?nft=" />
-                            <NftCard imgsrc='/images/metatrader-monkey.jpeg' heading='Meta Trader' btntext={'Mint'} linkdata="https://metatraderarmy.netlify.app/?nft=" />
-                            <NftCard imgsrc='/images/metatrader-monkey.jpeg' heading='Meta Trader' btntext={'Mint'} linkdata="https://metatraderarmy.netlify.app/?nft=" /> */}
                         </div>
+                        
                     </div>
                 </div>
 
