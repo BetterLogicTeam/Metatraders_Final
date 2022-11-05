@@ -57,7 +57,7 @@ const Home = () => {
 
     const connectToWallet = async () => {
 
-        let acc = await loadWeb3()
+        // let acc = await loadWeb3()
 
 
         let contract = await new window.web3.eth.Contract(CONTRACT[0].contractAbi, CONTRACT[0].contractAddress)
